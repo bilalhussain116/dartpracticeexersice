@@ -1,5 +1,5 @@
 import 'dart:io';
-
+/*
 void main() 
 {
   int option;
@@ -57,17 +57,105 @@ void main()
   
   
 
-    
+    import 'dart:io';
+
+void main() {
+  print("enter your numbers") ;
+ 
+  int num = int.parse(stdin.readLineSync()!);
+  int? i=1;
+  final list = [];
+while (i != 0) {
   
+  if (num != 0) {
   
-  
-  
-  
-  
+  print("enter another number or 0 to exit");
+  num = int.parse(stdin.readLineSync()!);
+   }
+   list.add(num);
+   i = num;
+ 
+} ;
+print(list);
+int listlength = list.length;
+print("count $listlength");
+int sum = list.reduce((value, element) => value + element);
+print("sum $sum");
+double avg = sum / listlength;
+print("average $avg");
+int max = list.reduce((curr, next) => curr > next ? curr : next);
+print("max $max");  
+int min = list.reduce((curr, next) => curr < next ? curr : next);
+print("min $min");  
+int evenCount = list.where((num) => num % 2 == 0).length;
+print("even count $evenCount");
+int oddCount = list.where((num) => num % 2 != 0).length;
+print("odd count $oddCount");
+
+  if (num == 0) {
+    print("you are out of the loop");
+}
 
   
   
-  
-  
-  
 }
+  
+  
+    
+  
+  
+}*/
+void main(){
+  print("enter your startint numbers") ;
+ int  startNum = int.parse(stdin.readLineSync()!);
+  print("enter your ending numbers") ;  
+  int  endNum = int.parse(stdin.readLineSync()!);
+final result=[];
+  final primeNo=[];
+
+
+  for (int x = startNum; x <= endNum; x++) {
+           
+            result.add(x);
+ 
+  } print(result);
+  print("Start number is $startNum");
+  print("End number is $endNum"); 
+  print("Prime numbers between $startNum and $endNum are:");
+  int k=0;
+ for (int j = k+2; j <= result.length+1; j++) 
+  {
+    
+          for (int i = k+2; i <= endNum+2; i++) {
+         int num =result[j-2];
+       // print("j=$j");
+        //print("i=$i");
+        //print(num);
+         if( num != i) {
+          if ( num % i == 0){
+           print("$num is not a prime no");//prirent(result);     
+            
+            break;
+         }
+         }
+         else {
+           
+             print("$num is a prime no");//prirent(result);     
+          
+          primeNo.add(num);
+        break;
+          
+         }
+         }
+         }
+         print(primeNo);
+          print("Total prime no are ${primeNo.length}");
+         print("largest prime no is ${primeNo.reduce((curr, next) => curr > next ? curr : next)}");
+     
+       }
+
+  
+    
+  
+
+
