@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 /*
 void main() 
 {
@@ -104,7 +105,7 @@ print("odd count $oddCount");
     
   
   
-}*/
+}
 void main(){
   print("enter your startint numbers") ;
  int  startNum = int.parse(stdin.readLineSync()!);
@@ -152,10 +153,86 @@ final result=[];
           print("Total prime no are ${primeNo.length}");
          print("largest prime no is ${primeNo.reduce((curr, next) => curr > next ? curr : next)}");
      
-       }
-
+       }*/
+void main(){
+  print("I am thingking a number between 1 to 100") ; 
+ 
+ int  Num = int.parse(stdin.readLineSync()!);
+   
+List<int> selectedlist = List.generate(100, (i) => i + 1);
+ print("enter your number ") ;
+   int guess=selectedlist[Random().nextInt(selectedlist.length)];
   
+ int attempt=0;
+ while( attempt<6){
+  
+if(guess==Num){
+  print("congratulations you guessed it right");
+  break;
+}else if(Num < guess && Num>guess-5){
+  print("your guess is low but close");
+   print("guess again");
+Num = int.parse(stdin.readLineSync()!);
+  attempt++;}
+else if(Num < guess-5 && Num>guess-10){
+  print("your guess is low");
+   print("guess again");
+Num = int.parse(stdin.readLineSync()!);
+  attempt++;}
+  
+  else if(Num<guess-10 && Num>guess-25 ){
+  print("your guess is too low");
+   print("guess again");
+Num = int.parse(stdin.readLineSync()!);
+  attempt++;}
+
+else if(Num<guess-25 && Num>guess-50 ){
+  print("your guess is way too low");
+  print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
+else if(Num<guess-50){
+  print("your guess is way way too low");
+   print("guess again");
+Num = int.parse(stdin.readLineSync()!);
+  attempt++;}
+
+else if(Num>guess && Num<guess+5){
+  print("your guess is high but close");
+   print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
+else if(Num>guess+5 && Num<guess+10){
+  print("your guess is high");
+   print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
     
   
+else if(Num>guess+10 && Num<guess+25 ){
+  print("your guess is too high");
+   print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
+  
+else if(Num>guess+25  && Num<guess+50 ){
+  print("your guess is way too high");
+   print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
+else if(Num>guess+50 ){
+  print("your guess is way way too high");
+   print("guess again");
+ Num = int.parse(stdin.readLineSync()!);
+  attempt++;
+}
+    
+    
 
-
+}attempt++;
+print("you have used all your attempts the number was $guess");}
